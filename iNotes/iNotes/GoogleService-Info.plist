@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>650451398550-l34ihjqsntlcpvd7um2mj7mgogtr14kn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.650451398550-l34ihjqsntlcpvd7um2mj7mgogtr14kn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAXKP8z2LMiAMpM6QTtvi6h2kx-Cu6mcPs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>650451398550</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.estherosammor.iNotes</string>
+	<key>PROJECT_ID</key>
+	<string>inotes-62367</string>
+	<key>STORAGE_BUCKET</key>
+	<string>inotes-62367.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:650451398550:ios:0c4afa17eb7e24e98cb7b7</string>
+	<key>DATABASE_URL</key>
+	<string>https://inotes-62367.firebaseio.com</string>
+</dict>
+</plist>
