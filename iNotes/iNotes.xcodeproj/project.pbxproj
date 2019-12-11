@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		792A898878EBB4B448EC82D7 /* Pods_iNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3E77AC6250AE7DD112D9E6 /* Pods_iNotes.framework */; };
-		804A5CD22399807B000FBD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804A5CD12399807B000FBD41 /* AppDelegate.swift */; };
 		804A5CD42399807B000FBD41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804A5CD32399807B000FBD41 /* SceneDelegate.swift */; };
 		804A5CD62399807B000FBD41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804A5CD52399807B000FBD41 /* ViewController.swift */; };
 		804A5CD92399807B000FBD41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804A5CD72399807B000FBD41 /* Main.storyboard */; };
 		804A5CDB2399807C000FBD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804A5CDA2399807C000FBD41 /* Assets.xcassets */; };
 		804A5CDE2399807C000FBD41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804A5CDC2399807C000FBD41 /* LaunchScreen.storyboard */; };
 		804A5CE623998142000FBD41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804A5CE523998142000FBD41 /* GoogleService-Info.plist */; };
+		80CAE78323A168300095D795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAE78223A168300095D795 /* AppDelegate.swift */; };
 		80DE20E4239ECF3300F868C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DE20E3239ECF3300F868C9 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,6 @@
 		3E3E77AC6250AE7DD112D9E6 /* Pods_iNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A399730EE6BE34902C90F4E /* Pods-iNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNotes.release.xcconfig"; path = "Target Support Files/Pods-iNotes/Pods-iNotes.release.xcconfig"; sourceTree = "<group>"; };
 		804A5CCE2399807B000FBD41 /* iNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		804A5CD12399807B000FBD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		804A5CD32399807B000FBD41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		804A5CD52399807B000FBD41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		804A5CD82399807B000FBD41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		804A5CDD2399807C000FBD41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		804A5CDF2399807C000FBD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		804A5CE523998142000FBD41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80CAE78223A168300095D795 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DE20E3239ECF3300F868C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		AD1621BA0FB737D286A25C5E /* Pods-iNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNotes.debug.xcconfig"; path = "Target Support Files/Pods-iNotes/Pods-iNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,17 +76,25 @@
 		804A5CD02399807B000FBD41 /* iNotes */ = {
 			isa = PBXGroup;
 			children = (
-				804A5CD12399807B000FBD41 /* AppDelegate.swift */,
+				80CAE78223A168300095D795 /* AppDelegate.swift */,
 				804A5CD32399807B000FBD41 /* SceneDelegate.swift */,
 				804A5CD52399807B000FBD41 /* ViewController.swift */,
 				80DE20E3239ECF3300F868C9 /* RegisterViewController.swift */,
-				804A5CD72399807B000FBD41 /* Main.storyboard */,
+				80DE20EA239ED10200F868C9 /* View */,
 				804A5CDA2399807C000FBD41 /* Assets.xcassets */,
 				804A5CDC2399807C000FBD41 /* LaunchScreen.storyboard */,
 				804A5CDF2399807C000FBD41 /* Info.plist */,
 				804A5CE523998142000FBD41 /* GoogleService-Info.plist */,
 			);
 			path = iNotes;
+			sourceTree = "<group>";
+		};
+		80DE20EA239ED10200F868C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				804A5CD72399807B000FBD41 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C4D3A3697FA4C9FFFBCC1AD9 /* Frameworks */ = {
@@ -213,8 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CAE78323A168300095D795 /* AppDelegate.swift in Sources */,
 				804A5CD62399807B000FBD41 /* ViewController.swift in Sources */,
-				804A5CD22399807B000FBD41 /* AppDelegate.swift in Sources */,
 				804A5CD42399807B000FBD41 /* SceneDelegate.swift in Sources */,
 				80DE20E4239ECF3300F868C9 /* RegisterViewController.swift in Sources */,
 			);
