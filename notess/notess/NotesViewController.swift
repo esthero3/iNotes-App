@@ -8,7 +8,19 @@
 
 import UIKit
 
+//the protocol pattern,so the table can update
+protocol NoteViewDelegate {
+    
+    //name of function that will be impelemented
+    func didUpdateNoteWithTitle(newTitle : String, andBody newBody : String)
+}
+
+
 class NotesViewController: UIViewController, UITextViewDelegate {
+    
+    //variable to hold the delegate
+    var delegate : NoteViewDelegate?
+    
     
     //a variable that links to the main body text view
     @IBOutlet weak var txtBody: UITextView!
@@ -33,6 +45,17 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         self.txtBody.delegate = self
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        
+        //tells the main view controller that we're going to update the selected item. if the delegate is not nil
+        
+        if self.delegate != nil {
+            self.delegate!.didUpdateNoteWithTitle(newTitle: self.navigationItem.title!, andBody: self.txtBody.text)
+        }
+    }
+    
     @IBAction func doneEditingBody() {
     
         //hides the keyboard
@@ -40,6 +63,12 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         
     //makes the button invisible (still allowed to be pressed, but that's okay for this app)
         self.btnDoneEditing.tintColor = UIColor.clear
+        
+        //tells the main view controller that the selected item is updated. only of the delegate is not nil
+        
+        if self.delegate != nil {
+            self.delegate!.didUpdateNoteWithTitle(newTitle: self.navigationItem.title!, andBody: self.txtBody.text)
+        }
     
     }
     
@@ -50,8 +79,25 @@ class NotesViewController: UIViewController, UITextViewDelegate {
           122.0/255.0, blue: 1, alpha: 1)
     }
     
-    //36
-    
-
+    func textViewDidChange(_ textView: UITextView) {
+        
+        //seperate the body into multiple sections
+        let components = self.txtBody.text.components(separatedBy: ("\n"))
+        
+        //reset the title to blank in case there are no componenets with valid text
+        self.navigationItem.title = ""
+        
+        //loop through each item in the components array
+        for item in components {
+            
+            if components.count > 0 {
+                
+                //set title to the item and break out of the for loop
+                self.navigationItem.title = item
+                break
+                
+            }
+        }
+    }
 }
 

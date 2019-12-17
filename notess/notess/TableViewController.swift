@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, NoteViewDelegate {
     
     //array of dictionaries
     //keys = "title", "body"
@@ -20,7 +20,16 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        //first reads in the saved value. then uses "as?" to convert "AnyObject" (the type returned by NSUserDefaults) to the array of dictionaries
+        //this is in an if-block so no "nil found" errors crash the app
+        //#downcasting
+               
+        if let newNotes = UserDefaults.standard.array(forKey: "notes") as? [[String:String]] {
+                    
+                 //set the instance variable to the newNotes variable
+                 arrNotes = newNotes
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,7 +47,7 @@ class TableViewController: UITableViewController {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         //grab the "default cell", using the identifier set up in the Storyboard
-        var cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL")!
       
         // set the text to the title value of the same index of the array
         cell.textLabel!.text = arrNotes[indexPath.row]["title"]
@@ -70,12 +79,15 @@ class TableViewController: UITableViewController {
         //set the body of the view controller to the selectedIndex's body
         notesEditorVC.strBodyText = arrNotes[self.selectedIndex]["body"]!
         
+        //set the delegate to self so the method get called here
+        notesEditorVC.delegate = self
+        
         }
     
     @IBAction func newNote() {
         
         //new dictionary with 2 keys and test values for both
-        var newDict = ["title" : "TestTitle", "body" : "TestBody"]
+        let newDict = ["title" : "", "body" : ""]
         
         //add the dictionary to the front (or top) of the array
         arrNotes.insert(newDict, at: 0)
@@ -86,23 +98,34 @@ class TableViewController: UITableViewController {
         //reload the table ( refresh the view)
         self.tableView.reloadData()
         
+        //save notes to the phone
+        saveNotesArray()
+        
         //push the editor view using the predefined segue
         performSegue(withIdentifier: "showEditorSegue", sender: nil)
         
-    }
-
-    
-    
         
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+    
+    func didUpdateNoteWithTitle(newTitle: String, andBody newBody:
+      String) {
+        
+        //update the respective values
+        self.arrNotes[self.selectedIndex]["title"] = newTitle
+        self.arrNotes[self.selectedIndex]["body"] = newBody
+        
+        //refresh the view
+        self.tableView.reloadData()
+        
+        //save notes to the phone
+        saveNotesArray()
+    }
+    
+    func saveNotesArray() {
+         //save the newly updated array
+        UserDefaults.standard.set(arrNotes,forKey: "notes")
+        UserDefaults.standard.synchronize()
+    }
 
 }
