@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>627612989214-mr1f9ne0ac26aju4a0mrqamtlujas0gc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.627612989214-mr1f9ne0ac26aju4a0mrqamtlujas0gc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBvVjHPawZqgTRgk-tBjjag3IJcaR5icXQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>627612989214</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.estherosammor.notess</string>
+	<key>PROJECT_ID</key>
+	<string>notes-app-iphone</string>
+	<key>STORAGE_BUCKET</key>
+	<string>notes-app-iphone.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:627612989214:ios:8a07b0e9a8a2291f67bb0f</string>
+	<key>DATABASE_URL</key>
+	<string>https://notes-app-iphone.firebaseio.com</string>
+</dict>
+</plist>
