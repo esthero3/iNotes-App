@@ -102,7 +102,7 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         self.tableView.reloadData()
         
         //save notes to the phone
-        saveNotesArray()
+        //saveNotesArray()
         
         //push the editor view using the predefined segue
         performSegue(withIdentifier: "showEditorSegue", sender: nil)
@@ -127,8 +127,8 @@ class TableViewController: UITableViewController, NoteViewDelegate {
     
     func saveNotesArray() {
          //save the newly updated array
-        UserDefaults.standard.set(arrNotes,forKey: "notes")
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.set(arrNotes,forKey: "notes")
+//        UserDefaults.standard.synchronize()
     }
 
 }

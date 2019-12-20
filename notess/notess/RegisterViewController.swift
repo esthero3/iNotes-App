@@ -12,8 +12,9 @@ import SVProgressHUD
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
     
 
     override func viewDidLoad() {
@@ -22,14 +23,14 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func registerPressed(_ sender: Any) {
-        
-        //loading symbol
-        SVProgressHUD.show()
-        
-        
-        // register the user
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func registerPressed(_ sender: AnyObject) {
+
+            // register the user
+            Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
             
             if error != nil {
                 print(error!)
@@ -37,13 +38,11 @@ class RegisterViewController: UIViewController {
                 //success
                 print("Regiteration successful")
                 
-                //loading symbol disappears
-                SVProgressHUD.dismiss()
-                
                 self.performSegue(withIdentifier: "goToChat", sender: self)
             }
             
         }
+    
     }
     
     

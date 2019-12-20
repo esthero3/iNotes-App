@@ -12,8 +12,9 @@ import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
     
     
     override func viewDidLoad() {
@@ -22,11 +23,14 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     @IBAction func logInPressed(_ sender: AnyObject) {
         
-        //loading symbol
-        SVProgressHUD.show()
+       
         
         //log in the user
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
@@ -36,8 +40,7 @@ class LoginViewController: UIViewController {
             } else {
                 print("success")
                 
-                //loading symbol disappers
-                SVProgressHUD.dismiss()
+                
                 
                 self.performSegue(withIdentifier: "goToChat", sender: self)
             }

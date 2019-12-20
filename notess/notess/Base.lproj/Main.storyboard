@@ -93,6 +93,9 @@
                         <viewLayoutGuide key="safeArea" id="RGt-qe-VgL"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Fu-vO-KaA"/>
+                    <connections>
+                        <segue destination="Hik-Oo-FWW" kind="show" identifier="goToChat" id="cv5-Xt-iw6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04V-sP-v4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,21 +124,21 @@
                                 <rect key="frame" x="16" y="584" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23337695" green="0.0068717543040000004" blue="0.1097402349" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Log in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="logInPressed:" destination="C77-Rm-BbR" eventType="touchUpInside" id="zqF-Dy-7Gp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Id-Ak-1ac">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Id-Ak-1ac">
                                 <rect key="frame" x="16" y="316" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAC-pJ-Vfq">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAC-pJ-Vfq">
                                 <rect key="frame" x="16" y="258" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -148,8 +151,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="DIJ-00-I4m"/>
                     <connections>
-                        <outlet property="emailTextField" destination="IAC-pJ-Vfq" id="85o-qg-IQi"/>
-                        <outlet property="passwordTextField" destination="0Id-Ak-1ac" id="Al6-SO-PBL"/>
+                        <outlet property="emailTextField" destination="IAC-pJ-Vfq" id="WqG-WI-ZZD"/>
+                        <outlet property="passwordTextField" destination="0Id-Ak-1ac" id="Xmy-eK-O8j"/>
                         <segue destination="Hik-Oo-FWW" kind="show" identifier="goToChat" id="APF-x6-O0s"/>
                     </connections>
                 </viewController>
@@ -187,14 +190,14 @@
                                     <action selector="registerPressed:" destination="3cv-om-ges" eventType="touchUpInside" id="3QW-E6-6Jd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-tN-kH8">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-tN-kH8">
                                 <rect key="frame" x="16" y="338" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3i-Dc-N9K">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3i-Dc-N9K">
                                 <rect key="frame" x="16" y="282" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -207,8 +210,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="DhF-Sg-Ihc"/>
                     <connections>
-                        <outlet property="emailTextField" destination="X3i-Dc-N9K" id="k5d-IF-se8"/>
-                        <outlet property="passwordTextField" destination="fTN-tN-kH8" id="wTh-hx-Ag4"/>
+                        <outlet property="emailTextField" destination="X3i-Dc-N9K" id="nl5-f0-xIS"/>
+                        <outlet property="passwordTextField" destination="fTN-tN-kH8" id="rLh-20-kuc"/>
                         <segue destination="Hik-Oo-FWW" kind="show" identifier="goToChat" id="En5-A9-FY6"/>
                     </connections>
                 </viewController>
