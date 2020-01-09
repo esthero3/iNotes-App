@@ -26,7 +26,7 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         //#downcasting
                
         if let newNotes = UserDefaults.standard.array(forKey: "notes") as? [[String:String]] {
-                    
+
                  //set the instance variable to the newNotes variable
                  arrNotes = newNotes
         }
