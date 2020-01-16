@@ -10,6 +10,7 @@ import UIKit
 
 //the protocol pattern,so the table can update
 protocol NoteViewDelegate {
+    
     //name of function that will be impelemented
     func didUpdateNoteWithTitle(newTitle : String, andBody newBody : String)
 }
@@ -50,20 +51,20 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         
         //tells the main view controller that we're going to update the selected item. if the delegate is not nil
         
-        if self.delegate != nil {
-            self.delegate!.didUpdateNoteWithTitle(newTitle: self.navigationItem.title!, andBody: self.txtBody.text)
-        }
+//        if self.delegate != nil {
+//            self.delegate!.didUpdateNoteWithTitle(newTitle: self.navigationItem.title!, andBody: self.txtBody.text)
+//        }
     }
     
     @IBAction func doneEditingBody() {
     
-    //hides the keyboard
+        //hides the keyboard
     self.txtBody.resignFirstResponder()
         
-    //makes the button invisible (still allowed to be pressed)
-    self.btnDoneEditing.tintColor = UIColor.clear
+    //makes the button invisible (still allowed to be pressed, but that's okay for this app)
+        self.btnDoneEditing.tintColor = UIColor.clear
         
-    //tells the main view controller that the selected item is updated. only of the delegate is not nil
+        //tells the main view controller that the selected item is updated. only of the delegate is not nil
         
         if self.delegate != nil {
             self.delegate!.didUpdateNoteWithTitle(newTitle: self.navigationItem.title!, andBody: self.txtBody.text)

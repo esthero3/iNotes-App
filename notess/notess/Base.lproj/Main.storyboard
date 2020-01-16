@@ -31,6 +31,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="dFK-jH-STl">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="k98-t9-Zfx">
+                            <connections>
+                                <action selector="LogOutPressed:" destination="Hik-Oo-FWW" id="d0E-sm-dSK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6uI-az-5R6">
                             <connections>
                                 <action selector="newNote" destination="Hik-Oo-FWW" id="74d-VC-vCJ"/>
