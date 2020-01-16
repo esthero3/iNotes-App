@@ -6,30 +6,54 @@
 //  Copyright © 2019 Esther Osammor. All rights reserved.
 //
 
+//testing testing 123. will u save to github?
+//checking again pls dont change...!!!!!
+
 import UIKit
+import Firebase
 
 class TableViewController: UITableViewController, NoteViewDelegate {
+    
+    
     
     //array of dictionaries
     //keys = "title", "body"
     var arrNotes = [[String:String]]()
+    
+//    var ref:DatabaseReference?
+//    var databaseHandle:DatabaseHandle?
     
     //selected index when transitioning (-1 as sentinel value)
     var selectedIndex = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //ref = Database.database().reference()
 
         
-        //first reads in the saved value. then uses "as?" to convert "AnyObject" (the type returned by NSUserDefaults) to the array of dictionaries
-        //this is in an if-block so no "nil found" errors crash the app
-        //#downcasting
+//        first reads in the saved value. then uses "as?" to convert "AnyObject" (the type returned by NSUserDefaults) to the array of dictionaries
+//        this is in an if-block so no "nil found" errors crash the app
+//        #downcasting
                
         if let newNotes = UserDefaults.standard.array(forKey: "notes") as? [[String:String]] {
 
                  //set the instance variable to the newNotes variable
                  arrNotes = newNotes
         }
+    
+//        databaseHandle = ref?.child("Notes").observe(.childAdded, with: { (snapshot) in
+//
+//            let snapshotValue = snapshot.value as? Dictionary<String,String>
+//
+//            let readTitle = snapshotValue!["Title"]
+//            let readBody = snapshotValue!["NotesBody"]
+//
+//            let readNote = String()
+//
+//
+//        })
+  
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,8 +67,7 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         return arrNotes.count
     }
     
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         //grab the "default cell", using the identifier set up in the Storyboard
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL")!
@@ -86,6 +109,7 @@ class TableViewController: UITableViewController, NoteViewDelegate {
     
     @IBAction func newNote() {
         
+        
         //new dictionary with 2 keys and test values for both
         let newDict = ["title" : "", "body" : ""]
         
@@ -99,7 +123,8 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         self.tableView.reloadData()
         
         //save notes to the phone
-        saveNotesArray()
+        //saveNotesArray()
+       
         
         //push the editor view using the predefined segue
         performSegue(withIdentifier: "showEditorSegue", sender: nil)
@@ -119,13 +144,31 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         self.tableView.reloadData()
         
         //save notes to the phone
-        saveNotesArray()
+        
+        //saveNotesArray()
+//        ref?.child("Notes")
+//
+//        let notesDictionary = ["Sender": Auth.auth().currentUser?.email, "NotesBody": newBody, "Title": newTitle]
+//
+//        ref?.childByAutoId().setValue(notesDictionary) {
+//            (error, reference) in
+//
+//            if error != nil {
+//                print(error!)
+//            } else {
+//                print("saved")
+//            }
+//        }
     }
     
     func saveNotesArray() {
          //save the newly updated array
         UserDefaults.standard.set(arrNotes,forKey: "notes")
         UserDefaults.standard.synchronize()
+    }
+    
+    func getNotes() {
+            //self.arrNotes.append()
     }
 
 }
