@@ -142,19 +142,22 @@ class TableViewController: UITableViewController, NoteViewDelegate {
     
     // retrevies the notes from firebase database
     func getNotes() {
-        
         let NotesDB = Database.database().reference().child("Notes")
-        
+
         NotesDB.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as? Dictionary<String,String>
-            
+
             let body = snapshotValue!["NotesBody"]
             let title = snapshotValue!["Title"]
+            let user = snapshotValue!["User"]
             
-            let note = ["title" : title, "body": body]
-
-            self.arrNotes.append(note as! [String : String])
-            
+           
+            // retrives the notes of the user logged in
+            if Auth.auth().currentUser?.email == user {
+                
+                let note = ["title" : title, "body": body]
+                self.arrNotes.append(note as! [String : String])
+            }
             self.tableView.reloadData()
         })
     }
