@@ -2,7 +2,9 @@
 cs20-cse2920-master-project-esthero3 created by GitHub Classroom
 
 Name: Esther Osammor
+
 ID: 1032745
+
 Date: January 20, 2020
 
 1. From working on this app, I learned more about databases and working with Xcode in general. I learnt how to 
