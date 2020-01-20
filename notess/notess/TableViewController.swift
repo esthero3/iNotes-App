@@ -6,9 +6,6 @@
 //  Copyright © 2019 Esther Osammor. All rights reserved.
 //
 
-//testing testing 123. will u save to github?
-//checking again pls dont change...!!!!!
-
 import UIKit
 import Firebase
 
@@ -23,11 +20,8 @@ class TableViewController: UITableViewController, NoteViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-   
         //retrieve notes
         getNotes()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,8 +35,7 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         return arrNotes.count
     }
     
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         //grab the "default cell", using the identifier set up in the Storyboard
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL")!
@@ -54,6 +47,7 @@ class TableViewController: UITableViewController, NoteViewDelegate {
         return cell
         
     }
+    
     
     override func tableView(_ tableView: UITableView,
       didSelectRowAt indexPath: IndexPath) {
