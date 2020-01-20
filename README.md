@@ -1,6 +1,10 @@
 # cs20-cse2920-master-project-esthero3
 cs20-cse2920-master-project-esthero3 created by GitHub Classroom
 
+Name: Esther Osammor
+ID: 1032745
+Date: January 20, 2020
+
 1. From working on this app, I learned more about databases and working with Xcode in general. I learnt how to 
 add constraints to the storyboard and how to really work with arrays. The basic version of the app where the
 notes saved to the phone went well for me, I was ahead of time and I found it quite easy. I also learned about
